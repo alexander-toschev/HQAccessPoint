@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2F1070EC-C77C-4A89-A8BC-ECDDE1334795}</ProjectGuid>
+    <ProjectGuid>{3E5252C6-E92A-4E4B-BFE5-45CC8D86C863}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HQAccessPoint.Services</RootNamespace>
-    <AssemblyName>HQAccessPoint.Services</AssemblyName>
+    <RootNamespace>HQAccessPoint.Services.Contracts</RootNamespace>
+    <AssemblyName>HQAccessPoint.Services.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,9 +46,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HQAccessPoint.Services.Contracts\HQAccessPoint.Services.Contracts.csproj">
-      <Project>{3E5252C6-E92A-4E4B-BFE5-45CC8D86C863}</Project>
-      <Name>HQAccessPoint.Services.Contracts</Name>
+    <ProjectReference Include="..\HQAccessPoint.DAL\HQAccessPoint.DAL.csproj">
+      <Project>{C663E814-93A7-4357-8A70-179C91676BE0}</Project>
+      <Name>HQAccessPoint.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

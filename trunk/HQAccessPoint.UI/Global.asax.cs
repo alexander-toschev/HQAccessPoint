@@ -4,11 +4,56 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Security.Principal;
 
 namespace HQAccessPoint.UI
 {
     public class Global : System.Web.HttpApplication
     {
+
+        void Application_AuthenticateRequest(object sender, EventArgs e)
+        {
+            // Fires upon attempting to authenticate the use
+            string cookieName = FormsAuthentication.FormsCookieName;
+            HttpCookie authCookie = Context.Request.Cookies[cookieName];
+
+            if ((authCookie == null))
+            {
+                //There is no authentication cookie.
+                return;
+            }
+
+            FormsAuthenticationTicket authTicket = null;
+
+            try
+            {
+                authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+            }
+            catch (Exception ex)
+            {
+                //Write the exception to the Event Log.
+                return;
+            }
+
+            if ((authTicket == null))
+            {
+                //Cookie failed to decrypt.
+                return;
+            }
+
+            //When the ticket was created, the UserData property was assigned a
+            //pipe-delimited string of group names.
+            string[] groups = authTicket.UserData.Split(new char[] { '|' });
+
+            //Create an Identity.
+            GenericIdentity id = new GenericIdentity(authTicket.Name, "LdapAuthentication");
+
+            //This principal flows throughout the request.
+            GenericPrincipal principal = new GenericPrincipal(id, groups);
+
+            Context.User = principal;
+
+        }
 
         void Application_Start(object sender, EventArgs e)
         {
