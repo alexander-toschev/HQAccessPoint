@@ -11,6 +11,6 @@ namespace HQAccessPoint.Services.Contracts
     public interface IWidgetService
     {
         [OperationContract]
-        public List<WidgetDTO> GetAllWidgets();
+        List<WidgetDTO> GetAllWidgets();
     }
 }

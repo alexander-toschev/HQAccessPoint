@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HQAccessPoint.DAL\HQAccessPoint.DAL.csproj">
+      <Project>{C663E814-93A7-4357-8A70-179C91676BE0}</Project>
+      <Name>HQAccessPoint.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HQAccessPoint.Services.Contracts\HQAccessPoint.Services.Contracts.csproj">
       <Project>{3E5252C6-E92A-4E4B-BFE5-45CC8D86C863}</Project>
       <Name>HQAccessPoint.Services.Contracts</Name>
