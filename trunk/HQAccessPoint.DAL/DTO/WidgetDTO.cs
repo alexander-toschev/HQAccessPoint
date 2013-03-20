@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 
 namespace HQAccessPoint.DAL.DTO
 {
+    //этот аттрибут необходим для правильной сериализации в JSON
     [DataContract]
     public class WidgetDTO
     {

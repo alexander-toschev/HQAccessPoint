@@ -39,6 +39,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -57,6 +60,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Services\WidgetService.svc" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -133,6 +137,16 @@
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HQAccessPoint.Services.Contracts\HQAccessPoint.Services.Contracts.csproj">
+      <Project>{3E5252C6-E92A-4E4B-BFE5-45CC8D86C863}</Project>
+      <Name>HQAccessPoint.Services.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HQAccessPoint.Services\HQAccessPoint.Services.csproj">
+      <Project>{2F1070EC-C77C-4A89-A8BC-ECDDE1334795}</Project>
+      <Name>HQAccessPoint.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

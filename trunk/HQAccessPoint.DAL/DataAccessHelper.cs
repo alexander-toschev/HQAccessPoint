@@ -8,9 +8,8 @@ namespace HQAccessPoint.DAL
 {
     public class DataAccessHelper
     {
-
-
-        public static WidgetDTO ToWidgetDTO(Widget w)
+        
+        public static  WidgetDTO ToWidgetDTO(Widget w)
         {
             throw new NotImplementedException();
         }

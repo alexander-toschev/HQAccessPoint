@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service= "HQAccessPoint.Services.WidgetService"  Factory="System.ServiceModel.Activation.WebScriptServiceHostFactory"    %>
